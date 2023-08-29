@@ -1,0 +1,59 @@
+import remiseras.*
+import cliente.*
+
+
+/*
+ Veamos cuánto cobra cada remisera un viaje de 10 kilómetros. En lo que sigue, se supone que Ana María está económicamente estable, y que no se cambió el valor pactado con Teresa.
+- _Roxana_: a Ludmila 180 pesos (18 * 10), a Ana María 300, a Teresa 220.
+- _Gabriela_: a Ludmila 216 pesos (180 * 1.2), a Ana María 360, a Teresa 264.
+- _Mariela_: lo mismo que Roxana.
+- _Juana_: 200 pesos a todos.
+
+Si el viaje es de 2 kilómetros, los valores son estos:
+- _Roxana_: a Ludmila 36 pesos (18 * 2), a Ana María 60, a Teresa 44.
+- _Gabriela_: a Ludmila 43.20 pesos (36 * 1.2), a Ana María 72, a Teresa 52.80.
+- _Mariela_: a Ludmila y a Teresa 50 pesos que es el mínimo, a Ana María 60.
+- _Juana_: 100 pesos a todos. 
+ */
+
+
+describe "Test Remisera roxana"{
+	test "El cliente ludmila viaja  10 km"
+		{
+			assert.equals(180,roxana.precioViaje(ludmila,10))
+		}
+		
+test "El cliente anamaria economicamente esable viaja  10 km"
+		{
+			assert.equals(300,roxana.precioViaje(anaMaria,10))
+		}
+		
+test "El cliente teresa  10 km"
+		{
+			assert.equals(220,roxana.precioViaje(teresa,10))
+		}
+test "El cliente ludmila viaja 2 km"
+		{
+			assert.equals(36,roxana.precioViaje(ludmila,2))
+		}	
+		
+test "El cliente anamaria economicamente esable viaja  2 km"
+		{
+			assert.equals(60,roxana.precioViaje(anaMaria,2))
+		}	
+
+test "El cliente teresa  2 km"
+		{
+			assert.equals(44,roxana.precioViaje(teresa,2))
+		}
+
+
+		}
+		
+describe "Test Remisera Lucia"{
+	test "El cliente ludmila viaja  10 km"
+		{
+			assert.throwExeptionWhitMessage("No se puede reemplazar a uno mismo",{lucia.remiseraAReemplazar(lucia)}	)
+					}
+					}
+		

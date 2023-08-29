@@ -1,0 +1,41 @@
+import cliente.*
+
+describe "Testing de cliente"
+ {
+
+test "Ana Maria  esta Economicamente Estable" {
+
+	assert.that(anaMaria.economicaMenteEstable())
+
+}
+
+test "Precio por km cuando esta economicamnente estable"
+	{
+		assert.equals(30,anaMaria.precioPorKm())
+	}
+
+
+
+
+test "Ana Maria no esta Economicamente Estable" {
+	anaMaria.cambiarEstabilidadEconomica()
+	assert.notThat(anaMaria.economicaMenteEstable())
+
+}
+
+}
+
+describe "Testing de Teresa"
+	{
+		test "precio por km sin cambios igual a 22"	
+		{
+		assert.equals(22,teresa.precioPorKm())
+		}
+		
+		test "precio por km si cambia  a 32"	
+		{
+			teresa.cambiarPrecio(32)
+		assert.equals(32,teresa.precioPorKm())
+		}
+		
+	}
